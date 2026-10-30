@@ -12,6 +12,12 @@ jobs:
       - name: Baixar codigo do repositorio
         uses: actions/checkout@v4
 
+      - name: Descompactar Projeto Automaticamente
+        run: |
+          if [ -f "AutoLetras_Projeto_GitHub.zip" ]; then
+            unzip -o AutoLetras_Projeto_GitHub.zip
+          fi
+
       - name: Configurar Java JDK 17
         uses: actions/setup-java@v4
         with:
